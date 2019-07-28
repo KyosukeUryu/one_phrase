@@ -1,0 +1,18 @@
+<% if users.any? %>
+  <ul class="list-unstyled">
+    <% users.each do |user| %>
+      <li class="media">
+        <img class="mr-2 rounded border border-primary" src="<%= gravatar_url(user, { size: 50 }) %>" alt="">
+        <div class="media-body">
+          <div>
+            <%= link_to user.name, user_path(user) %>
+          </div>
+          <div>
+            <!--%= link_to user.phrase.last, --> 
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate users %>
+<% end %>
