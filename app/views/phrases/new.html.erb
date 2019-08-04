@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="text-center mb-5 col-sm-12">
+    <h2>フレーズを残そう！</h2>
+  </div>
+  <div>
+    <%= form_with(model: @phrase, local: true) do |f| %>
+      <!--%= hidden_field_tag :book_id, params[:book_id] %-->
+      <!--%= hidden_field_tag :user_id, current_user.id %-->
+      <div class="form-group">
+        <%= hidden_field_tag :book_id, params[:book_id] %>
+        <%= hidden_field_tag :user_id, current_user.id %>
+        <%= f.label :content, 'フレーズ' %>
+        <%= f.text_field :content, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= hidden_field_tag :book_id, params[:book_id] %>
+        <%= hidden_field_tag :user_id, current_user.id %>
+        <%= f.label :comment, 'コメント' %>
+        <%= f.text_field :comment, class: 'form-control' %>
+      </div>
+      <%= f.submit 'フレーズ投稿', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

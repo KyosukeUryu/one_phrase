@@ -13,7 +13,7 @@
       <th class="text-center">投稿日時</th>
     </tr>
     <tr>
-      <%= @phrases.each do |phrase| %>
+      <% @phrases.each do |phrase| %>
         <td class="text-center"><%= phrase.content %></td>
         <td class="text-center"><%= phrase.book.name %></td>
         <td class="text-center"><%= phrase.created_at %></td>

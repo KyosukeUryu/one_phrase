@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="text-center">
+    <h2>著者一覧</h2>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th>著者名</th>
+      <th>最も投稿された書籍名</th>
+    </tr>
+    <% @authors.each do |author| %>
+      <% author.books.each do |book| %>
+        <tr>
+          <td><%= author.name %></td>
+          <td><%= book.name.last %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>

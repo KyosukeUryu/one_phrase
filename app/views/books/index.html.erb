@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="text-center">
+    <h2>作品名一覧</h2>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th>作品名</th>
+      <th>著者名</th>
+      <th>最新フレーズ</th>
+    </tr>
+    <tr>
+      <% @books.each do |book| %>
+        <% book.phrases.each do |phrase| %>
+          <td><%= book.name %></td>
+          <td><%= book.author.name %></td>
+          <td><%= phrase.content.last %></td>
+        <% end %>
+      <% end %>
+    </tr>
+  </table>
+</div>
