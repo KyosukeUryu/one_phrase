@@ -2,7 +2,7 @@ class AuthorsController < ApplicationController
   before_action :require_user_logged_in
 
   def index
-    @authors = Author.order(id: :desc).page(params[:page]).includes(:books).per(25)
+    @authors = Author.order(id: :desc).page(params[:page]).per(25)
   end
 
   def new

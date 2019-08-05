@@ -8,14 +8,14 @@
       <th>著者名</th>
       <th>最新フレーズ</th>
     </tr>
-    <tr>
-      <% @books.each do |book| %>
-        <% book.phrases.each do |phrase| %>
+    <% @books.each do |book| %>
+      <% book.phrases.each do |phrase| %>  
+        <tr>
           <td><%= book.name %></td>
           <td><%= book.author.name %></td>
           <td><%= phrase.content.last %></td>
-        <% end %>
+        </tr>
       <% end %>
-    </tr>
+    <% end %>
   </table>
 </div>

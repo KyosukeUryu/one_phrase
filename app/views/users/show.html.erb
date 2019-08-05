@@ -1,6 +1,6 @@
 <div class="row">
   
-  <div class="card offset-sm-4">
+  <div class="card offset-sm-4 mb-4">
     <div class="card-body">
       <h2><%= @user.name %>の「フレーズ」</h2>
     </div>
@@ -12,12 +12,12 @@
       <th class="text-center">作品名</th>
       <th class="text-center">投稿日時</th>
     </tr>
-    <tr>
-      <% @phrases.each do |phrase| %>
+    <% @phrases.each do |phrase| %>
+      <tr>
         <td class="text-center"><%= phrase.content %></td>
         <td class="text-center"><%= phrase.book.name %></td>
         <td class="text-center"><%= phrase.created_at %></td>
-      <% end %>    
-    </tr>
+      </tr>
+    <% end %> 
   </table>
 </div>

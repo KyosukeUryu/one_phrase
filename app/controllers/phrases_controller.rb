@@ -22,8 +22,8 @@ class PhrasesController < ApplicationController
   end
 
   def show
-    @book = @phrase.book_id
-    @author = @book.author_id
+    @book = @phrase.book
+    @author = @book.author
   end
 
   def edit
