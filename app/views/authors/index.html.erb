@@ -5,15 +5,17 @@
   <table class="table table-striped">
     <tr>
       <th>著者名</th>
-      <th>最も投稿された書籍名</th>
+      <th>投稿された最新書籍</th>
     </tr>
     <% @authors.each do |author| %>
-      <% author.books.each do |book| %>
-        <tr>
-          <td><%= author.name %></td>
-          <td><%= book.name.last %></td>
-        </tr>
-      <% end %>
+      <tr>
+        <td><%= author.name %></td>
+        <td><%= author.books.present? ? author.books.last.name : '書籍は投稿されてません' %></td>
+      </tr>
     <% end %>
   </table>
+  
+  
+  <!--% @authors.select{|author| author.books.present? }.each do |author| %-->
+    
 </div>

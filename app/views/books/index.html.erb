@@ -9,13 +9,11 @@
       <th>最新フレーズ</th>
     </tr>
     <% @books.each do |book| %>
-      <% book.phrases.each do |phrase| %>  
-        <tr>
-          <td><%= book.name %></td>
-          <td><%= book.author.name %></td>
-          <td><%= phrase.content.last %></td>
-        </tr>
-      <% end %>
+      <tr>
+        <td><%= book.name %></td>
+        <td><%= book.author.name %></td>
+        <td><%= book.phrases.present? ? book.phrases.last.content : 'フレーズはありません' %></td>
+      </tr>
     <% end %>
   </table>
 </div>
