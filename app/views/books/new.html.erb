@@ -6,7 +6,7 @@
     <%= form_with(url: new_phrase_path, local: true, method: :get) do |f| %>
       <%= hidden_field_tag :author_id, params[:author_id] %>
       <%= label_tag :book_id, '書籍名' %>
-      <%= select_tag :book_id, options_for_select(Book.all.map{ |book| [book.name, book.id] }) %>
+      <%= select_tag :book_id, options_for_select(Book.where(author_id: params[:author_id]).map{ |book| [book.name, book.id] }) %>
       <%= f.submit 'フレーズ入力へ', class: 'col-sm-3 offset-sm-3 btn btn-primary btn-block' %>
     <% end %>
     <!--%= select_tag :book_id, options_from_collection_for_select(Book.all, :id, :name) %-->
